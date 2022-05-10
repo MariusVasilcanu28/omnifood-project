@@ -1,14 +1,6 @@
-console.log("Hello World!");
-
-const text = "abcd";
-const h1 = document.querySelector(".heading-primary");
-console.log(text);
-console.log(h1);
-
 // set current year
 const yearElm = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
-console.log(currentYear);
 yearElm.textContent = currentYear;
 
 // make mobile nav work
@@ -25,7 +17,6 @@ allLinks.forEach(function (link) {
   link.addEventListener("click", function (event) {
     event.preventDefault();
     const href = link.getAttribute("href");
-    // console.log(href);
 
     // scroll to TOP
     if (href === "#")
@@ -61,10 +52,9 @@ const obs = new IntersectionObserver(
     }
   },
   {
-    // !!!! observe in the viewport
-    root: null,
-    threshold: 0,
-    rootMargin: "-80px",
+    root: null, // where El should be appearing
+    threshold: 0, // as soon as
+    rootMargin: "-80px", // fixing root margin
   }
 );
 obs.observe(sectionHeroElm);
